@@ -1,0 +1,584 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hallo
+    - hi
+    - hallo da
+    - guten Morgen
+    - guten Abend
+    - moin
+    - hey du
+    - lass uns loslegen
+    - hey Kumpel
+    - gutenMorgen
+    - gutenAbend
+    - guten Tag
+
+- intent: goodbye
+  examples: |
+    - bis bald
+    - auf Wiedersehen
+    - bis später
+    - gute Nacht
+    - tschüss
+    - auf Wiedersehen
+    - hab einen schönen Tag
+    - wir sehen uns
+    - tschüss tschüss
+    - bis später
+
+- intent: bot_challenge
+  examples: |
+    - bist du ein Bot?
+    - bist du ein Mensch?
+    - spreche ich mit einem Bot?
+    - spreche ich mit einem Menschen?
+
+- intent: thank_you
+  examples: |
+    - Danke
+    - danke sehr
+    - vielen dank
+    - danke dir
+    - danke für deine hilfe
+    - thx
+    - dange
+    - danke schön
+    - lieben dank
+    - herzlichen dank
+    - ich danke dir
+    - danke für alles
+    - danke für die unterstützung
+    - super, danke
+    - klasse, danke
+    - merci
+    - danke vielmals
+    - großen dank
+    - besten dank
+    - danke, das hat geholfen
+    - ich bin dir dankbar
+    - danke nochmal
+    - 1000 dank
+    - mega danke
+    - ich schätze das sehr
+    - danke dir vielmals
+    - ich bin sehr dankbar
+    - das war hilfreich, danke
+    - großartig, danke
+    - danke, du warst eine große hilfe
+    - vielen vielen dank
+    
+
+- intent: ask_exercise
+  examples: |
+    - Ich brauche Hilfe bei der Auswahl von Übungen
+    - Ich möchte passende Übungen finden
+    - Kannst du mir ein Training zusammenstellen?
+    - Ich will trainieren, aber weiß nicht womit ich anfangen soll
+    - Hast du allgemeine Übungen für mich?
+    - Welche Übungen gibt es für das Training?
+    - Zeig mir einfach irgendwelche Übungen
+    - Ich brauche Trainingsideen
+    - Gib mir Übungsvorschläge
+    - Ich möchte verschiedene Übungen ausprobieren
+    - Kannst du mir einige Übungen vorschlagen?
+    - Ich suche nach einem Trainingsplan
+    - Ich weiß nicht, welche Übungen ich machen soll
+    - Welche Trainingseinheiten kannst du empfehlen?
+    - Gib mir ein paar Übungsbeispiele
+    - Ich brauche allgemeine Trainingsübungen
+    - Zeige mir Übungen, die für alle Spieler geeignet sind
+    - Welche Übungen sind gut für Anfänger und Fortgeschrittene?
+    - Ich will einfach loslegen, welche Übungen hast du?
+    - Kannst du mir Tipps für ein allgemeines Training geben?
+    - Welche Übungen sind grundsätzlich hilfreich?
+    - Ich brauche Inspiration für mein Training
+    - Hast du Vorschläge für ein gutes Workout?
+    - Ich möchte mein Training verbessern, hast du Ideen?
+    - Zeige mir einige grundlegende Übungen
+    - Was sind typische Handball-Trainingsübungen?
+    - Welche Übungen kann man für das allgemeine Training verwenden?
+    - Welche Übungen empfiehlst du ohne spezielle Vorgaben?
+    - Was für Übungen gibt es ohne Einschränkung?
+    - Ich suche generelle Handball-Trainingsübungen
+    - Kannst du mir ein paar Trainingstipps geben?
+    - Gebe mir Übungen.
+
+
+- intent: ask_goal
+  examples: |
+    - Ich will [Bälle fangen](goal) üben
+    - Zeige mir etwas zu [Passen](goal)
+    - Ich will [Schnelligkeit](goal) trainieren
+    - [Abwehrarbeit](goal)
+    - [Abwehr](goal)
+    - Ich möchte [Kondition](goal) aufbauen
+    - Was hast du zu [Wurfkraft](goal)?
+    - Zeige mir Trainingseinheiten für [Passen](goal)
+    - [Fangen](goal)
+    - [Passen](goal)
+    - [Werfen](goal)
+    - [Abwehr](goal)
+    - [Kondition](goal)
+    - Übungen zur [Defensive](goal)
+    - Ich brauche [Konditionstraining](goal)
+    - Zeig mir Übungen für [Schnelle Beine](goal)
+    - Ich will meine [Abwehrtechniken](goal) verbessern
+    - Ich brauche Training für [Passspiel](goal)
+    - Ich möchte gezielt [Fangübungen](goal) machen
+    - Übungen zur [Kraft](goal) im [Werfen](goal)
+    - Gib mir Tipps für [Reaktionsübungen](goal)
+    - Ich brauche [Ausdauertraining](goal)
+    - Welche Übungen stärken die [Abwehrarbeit](goal)?
+    - Zeig mir Übungen zur [Ballübergabe](goal)
+    - Ich möchte meine [Defensive](goal) verbessern
+    - [Wurftechnik](goal) üben
+    - Gib mir Übungen für bessere [Ausdauer](goal)
+    - Welche Übungen gibt es für [Intervalltraining](goal)?
+    - Welche Übungen helfen bei der [Blockarbeit](goal)?
+    - Zeige mir Tipps für [Werfen mit Präzision](goal)
+    - Zeige mir [Passübungen](goal)
+    - Ich möchte mein [Passspiel](goal) verbessern
+    - Ich will [Pässe trainieren](goal)
+    - Ich brauche [Passkombinationen](goal) Übungen
+    - Wie trainiere ich die [Passgenauigkeit](goal)?
+    - Wie kann ich meine [Kraft beim Werfen](goal) verbessern?
+    - Ich will [Starkes Werfen](goal) üben
+    - Gib mir Tipps zur [Wurftechnik](goal)
+    - Ich brauche Übungen zur [Stärke beim Werfen](goal)
+    - Zeige mir [Ballwurf](goal) Training
+    - Was gibt es für [Wurftraining](goal)?
+    - Ich möchte gezielt [Würfe üben](goal)
+    - Hast du Übungen für [Werftraining](goal)?
+    - Zeig mir [Abwehrarbeit](goal)
+    - Ich brauche [Verteidigungsübungen](goal)
+    - Wie trainiere ich die [Defensive](goal)?
+    - Hast du Tipps für [Abwehrtraining](goal)?
+    - Zeige mir [Abwehrtechniken](goal)
+    - Ich will an meiner [Blockarbeit](goal) arbeiten
+    - Ich brauche [Verteidigungstraining](goal)
+    - Wie verbessere ich meine [Defensivarbeit](goal)?
+    - Ich möchte [Übungen für Ballannahme](goal) machen
+    - Ich brauche [Fitness](goal) Training
+    - Gib mir [Lauftraining](goal) Übungen
+    - Ich will gezieltes [Zirkeltraining](goal) ausprobieren
+    - Zeig mir [Laufübungen](goal)
+    - Ich suche [Sprinttraining](goal) für Spieler
+    - Ich möchte [Fangen](goal) trainieren
+    - Ich möchte das [Bälle Fangen](goal) trainieren
+
+- intent: ask_age_group
+  examples: |
+    - Was hast du für [U9](age_group)?
+    - Ich suche etwas für [unter 9-Jährige](age_group).
+    - Ich brauche Übungen für [9 Jahre alte Kinder](age_group).
+    - Training für [U9](age_group).
+    - Gib mir Übungen für die [unter 9-Jährige](age_group).
+    - Trainingseinheiten für die [9-Jährigen](age_group).
+    - Ich suche Übungen für [9-Jährige](age_group).
+    - Was für Übungen gibt es für [U9](age_group)?
+    - Zeig mir etwas für die [9 Jahre alten Kinder](age_group).
+    - Übungen für die Altersgruppe [U9](age_group).
+    - Was hast du für [U10](age_group)?
+    - Ich suche etwas für [unter 10-Jährige](age_group).
+    - Ich brauche Übungen für [10 Jahre alte Kinder](age_group).
+    - Training für [U10](age_group).
+    - Gib mir Übungen für die [unter 10-Jährige](age_group).
+    - Trainingseinheiten für die [10-Jährigen](age_group).
+    - Ich suche Übungen für [10-Jährige](age_group).
+    - Was für Übungen gibt es für [U10](age_group)?
+    - Zeig mir etwas für die [10 Jahre alten Kinder](age_group).
+    - Übungen für die Altersgruppe [U10](age_group).
+    - Was hast du für [U11](age_group)?
+    - Ich suche etwas für [unter 11-Jährige](age_group).
+    - Ich brauche Übungen für [11 Jahre alte Kinder](age_group).
+    - Training für [U11](age_group).
+    - Gib mir Übungen für die [unter 11-Jährige](age_group).
+    - Trainingseinheiten für die [11-Jährigen](age_group).
+    - Ich suche Übungen für [11-Jährige](age_group).
+    - Was für Übungen gibt es für [U11](age_group)?
+    - Zeig mir etwas für die [11 Jahre alten Kinder](age_group).
+    - Übungen für die Altersgruppe [U11](age_group).
+    - Was hast du für [U12](age_group)?
+    - Ich suche etwas für [unter 12-Jährige](age_group).
+    - Ich brauche Übungen für [12 Jahre alte Kinder](age_group).
+    - Training für [U12](age_group).
+    - Gib mir Übungen für die [unter 12-Jährige](age_group).
+    - Trainingseinheiten für die [12-Jährigen](age_group).
+    - Ich suche Übungen für [12-Jährige](age_group).
+    - Was für Übungen gibt es für [U12](age_group)?
+    - Zeig mir etwas für die [12 Jahre alten Kinder](age_group).
+    - Übungen für die Altersgruppe [U12](age_group).
+    - Was hast du für [U13](age_group)?
+    - Ich suche etwas für [unter 13-Jährige](age_group).
+    - Ich brauche Übungen für [13 Jahre alte Jugendliche](age_group).
+    - Training für [U13](age_group).
+    - Gib mir Übungen für die [unter 13-Jährige](age_group).
+    - Trainingseinheiten für die [13-Jährigen](age_group).
+    - Ich suche Übungen für [13-Jährige](age_group).
+    - Was für Übungen gibt es für [U13](age_group)?
+    - Zeig mir etwas für die [13 Jahre alten Jugendlichen](age_group).
+    - Übungen für die Altersgruppe [U13](age_group).
+    - Was hast du für [U14](age_group)?
+    - Ich suche etwas für [unter 14-Jährige](age_group).
+    - Ich brauche Übungen für [14 Jahre alte Jugendliche](age_group).
+    - Training für [U14](age_group).
+    - Gib mir Übungen für die [unter 14-Jährige](age_group).
+    - Trainingseinheiten für die [14-Jährigen](age_group).
+    - Ich suche Übungen für [14-Jährige](age_group).
+    - Was für Übungen gibt es für [U14](age_group)?
+    - Zeig mir etwas für die [14 Jahre alten Jugendlichen](age_group).
+    - Übungen für die Altersgruppe [U14](age_group).
+    - Was hast du für [U15](age_group)?
+    - Ich suche etwas für [unter 15-Jährige](age_group).
+    - Ich brauche Übungen für [15 Jahre alte Jugendliche](age_group).
+    - Training für [U15](age_group).
+    - Gib mir Übungen für die [unter 15-Jährige](age_group).
+    - Trainingseinheiten für die [15-Jährigen](age_group).
+    - Ich suche Übungen für [15-Jährige](age_group).
+    - Was für Übungen gibt es für [U15](age_group)?
+    - Zeig mir etwas für die [15 Jahre alten Jugendlichen](age_group).
+    - Übungen für die Altersgruppe [U15](age_group).
+    - Was hast du für [U16](age_group)?
+    - Ich suche etwas für [unter 16-Jährige](age_group).
+    - Ich brauche Übungen für [16 Jahre alte Jugendliche](age_group).
+    - Training für [U16](age_group).
+    - Gib mir Übungen für die [unter 16-Jährige](age_group).
+    - Trainingseinheiten für die [16-Jährigen](age_group).
+    - Ich suche Übungen für [16-Jährige](age_group).
+    - Was für Übungen gibt es für [U16](age_group)?
+    - Zeig mir etwas für die [16 Jahre alten Jugendlichen](age_group).
+    - Übungen für die Altersgruppe [U16](age_group).
+    - [U9](age_group)
+    - [U10](age_group)
+    - [U11](age_group)
+    - [U12](age_group)
+    - [U13](age_group)
+    - [U14](age_group)
+    - [U15](age_group)
+    - [U16](age_group)
+    - [U17](age_group)
+    - [U18](age_group)
+    - [unter 9](age_group)
+    - [unter 10](age_group)
+    - [unter 11](age_group)
+    - [unter 12](age_group)
+    - [unter 13](age_group)
+    - [unter 14](age_group)
+    - [unter 15](age_group)
+    - [unter 16](age_group)
+    - [unter 17](age_group)
+    - [unter 18](age_group)
+    - [unter 9 jährige](age_group)
+    - [unter 10 jährige](age_group)
+    - [unter 11 jährige](age_group)
+    - [unter 12 jährige](age_group)
+    - [unter 13 jährige](age_group)
+    - [unter 14 jährige](age_group)
+    - [unter 15 jährige](age_group)
+    - [unter 16 jährige](age_group)
+    - [unter 17 jährige](age_group)
+    - [unter 18 jährige](age_group)
+    - Ich suche etwas für [Kinder](age_group).
+    - Ich brauche Übungen für [Kinder](age_group).
+    - Training für [Grundschulkinder](age_group).
+    - Gib mir Übungen für die [kleine Kinder](age_group).
+    - Trainingseinheiten für die [Jugendliche](age_group).
+    - Ich suche Übungen für [Teenager](age_group).
+    - Was für Übungen gibt es für [Jugendliche](age_group)?
+    - Zeig mir etwas für die [Teenager](age_group).
+    - Übungen für [Erwachsene](age_group).
+    - Ich brauche Übungen für [Erwachsene](age_group).
+    - Zeig mir etwas für die [Senioren](age_group).
+    - Training für [Erwachsene Spieler](age_group).
+    - Was hast du für [Ü18](age_group)?
+    - Gib mir Übungen für die [ab 20 Jahre alten Spieler](age_group).
+    - Ich suche Trainingseinheiten für [Erwachsene Mannschaft](age_group).
+    - Übungen für [Volljährige](age_group).
+    - Ich suche Übungen für [Jugendliche](age_group).
+    - Was für Übungen gibt es für [Teenager](age_group)?
+    - Zeig mir etwas für die [Heranwachsenden](age_group).
+    - Ich brauche Training für [unter 16-Jährige](age_group).
+    - Gib mir Übungen für die [Jugendspieler](age_group).
+    - Trainingseinheiten für [junge Erwachsene](age_group).
+    - Ich möchte Übungen für [Schüler](age_group).
+    - Übungen für die [Jugendmannschaft](age_group).
+    - Was hast du für [Jugendliche ab 13 Jahren](age_group)?
+    - Ich suche etwas für [Kinder](age_group).
+    - Ich brauche Übungen für [kleine Kinder](age_group).
+    - Training für [Grundschulkinder](age_group).
+    - Gib mir Übungen für die [Schulkinder](age_group).
+    - Trainingseinheiten für [junge Kinder](age_group).
+    - Was hast du für [unter 12-Jährige](age_group)?
+    - Ich möchte Übungen für [Kinder bis 12 Jahre](age_group).
+    - Zeig mir etwas für die [Kinder im Grundschulalter](age_group).
+    - Übungen für [Grundschüler](age_group).
+
+- intent: ask_skill_level
+  examples: |
+    - für [Anfänger](skill_level)
+    - für [Einsteiger](skill_level)
+    - für [Neulinge](skill_level)
+    - für [Amateure](skill_level)
+    - für Spieler auf [Anfängerlevel](skill_level)
+    - für Spieler mit [wenig Erfahrung](skill_level)
+    - für Spieler mit [Grundkenntnissen](skill_level)
+    - sie sind [nicht sehr gut](skill_level)
+    - es sind [nicht sehr gute Spieler](skill_level)
+    - die Spieler sind [unerfahren](skill_level)
+    - Übungen für [Spieler ohne Erfahrung](skill_level)
+    - es sind [schlechte Spieler](skill_level)
+
+    - für [Fortgeschrittene](skill_level)
+    - für [Geübte](skill_level)
+    - die Gruppe ist [fortgeschritten](skill_level)
+    - für Spieler auf [Fortgeschrittenenniveau](skill_level)
+    - für Spieler mit [mittlerem Niveau](skill_level)
+    - die Spieler sind [durchschnittlich](skill_level)
+    - Training für [solide Spieler](skill_level)
+    - Übungen für [Spieler mit Übung](skill_level)
+    - das Team ist [semi-professionell](skill_level)
+    - Übungen für [erfahrene Spieler](skill_level)
+    - Training für [Spieler mit Erfahrung](skill_level)
+    - die Spieler sind [geübte Spieler](skill_level)
+    - das Team ist auf [fortgeschrittenem Niveau](skill_level)
+    - es sind [Fortgeschrittene spieler](skill_level)
+
+    - für [Profis](skill_level)
+    - für [Experten](skill_level)
+    - für [Spitzenspieler](skill_level)
+    - für [Top-Spieler](skill_level)
+    - für Spieler auf [Profi-Niveau](skill_level)
+    - Übungen für [Profispieler](skill_level)
+    - für Spieler auf [höchstem Niveau](skill_level)
+    - Training für [professionelle Spieler](skill_level)
+    - es sind [erfahrene Profis](skill_level)
+    - für Spieler auf [Expertenlevel](skill_level)
+    - das Team spielt auf [Liga-Niveau](skill_level)
+    - Übungen für [Spieler auf Profiniveau](skill_level)
+    - die Spieler sind [sehr gut](skill_level)
+    - Training für [Top-Spieler](skill_level)
+
+
+
+- intent: custom_restart
+  examples: |
+    - restart
+    - starte neu
+    - von vorne anfangen
+    - neu starten
+    - zurücksetzen
+
+- intent: explain_the_bot
+  examples: |
+    - Was kannst du?
+    - Was kannst du als Chatbot?
+    - Wobei kannst du mir helfen?
+    - Was genau macht dieser Chatbot?
+    - Was machst du?
+    - Erzähl mir, was du als Chatbot tust.
+    - Was ist deine Aufgabe?
+    - Was sind deine Aufgaben als Chatbot?
+    - Wie kannst du mich unterstützen?
+    - Was bietet dieser Chatbot an?
+    - Was genau bietest du an?
+    - Wie unterstützt du mich als Chatbot?
+    - Was sind deine Funktionen?
+    - Was ist deine Funktion als Chatbot?
+    - Erklär mir, was du machst.
+    - Chatbot, wie kannst du mir helfen?
+    - Was bist du für ein Bot?
+    - Was tut dieser Chatbot für mich?
+    - Was ist dein Ziel?
+    - Was für Fähigkeiten hat dieser Chatbot?
+    - Wobei bist du nützlich?
+    - Welche Funktionen hat dieser Chatbot?
+    - Was genau machst du für mich?
+    - Was ist dein Ziel als Chatbot?
+    - Erklär mir die Aufgaben dieses Chatbots.
+
+
+- synonym: U16
+  examples: |
+    - unter 13
+    - unter 14
+    - unter 15
+    - unter 16
+    - unter 13 jährige
+    - unter 14 jährige
+    - unter 15 jährige
+    - unter 16 jährige
+    - u13
+    - u14
+    - u15
+    - u16
+    - Jugendliche
+    - U15
+    - Teenager
+    - Jugendmannschaft
+    - Jugendliche unter 16
+    - Altersgruppe unter 16
+    - Junioren U16
+    - 15-Jährige
+    - 16 Jahre alte Jugendliche
+    - Jugendliche bis 16 Jahre
+    - Teenager bis 16 Jahre
+    - Schüler U16
+
+- synonym: U12
+  examples: |
+    - unter 12
+    - unter 11
+    - unter 10
+    - unter 9
+    - unter 12 jährige
+    - unter 11 jährige
+    - unter 10 jährige
+    - unter 9 jährige
+    - u12
+    - u11
+    - u10
+    - u09
+    - Kinder
+    - unter 12 Jährige
+    - bis 12 Jahre
+    - Altersgruppe unter 12
+    - Grundschulkinder
+    - Junioren U12
+    - Altersklasse U12
+    - Kinder unter 12
+    - Schüler U12
+    - unter 10-Jährige
+    - kleine Kinder
+    - Kinder bis 12 Jahre
+    - Kinder im Grundschulalter
+    - Grundschüler
+
+- synonym: Erwachsene
+  examples: |
+    - Erwachsene
+    - Erwachsene Spieler
+    - Senioren
+    - Ü18
+    - Ü20
+    - ab 18 Jahren
+    - ab 20 Jahre
+    - erwachsene Spieler
+    - Erwachsene Mannschaft
+    - Altersgruppe Erwachsene
+    - Training für Erwachsene
+    - Übungsgruppe Erwachsene
+    - ab 18
+    - Spieler über 18
+    - Training für Senioren
+    - Volljährige
+    - Menschen über 18
+    - Ü30 Spieler
+    - ab 20 Jahre alte Spieler
+    - ältere Spieler
+    - Erwachsene Teilnehmer
+
+- synonym: Anfänger
+  examples: |
+    - Einsteiger
+    - Neulinge
+    - Amateure
+    - Anfängerlevel
+    - nicht gut
+    - nicht sehr gut
+    - unerfahren
+    - nicht sehr gute Spieler
+    - Grundkenntnisse
+    - wenig Erfahrung
+    - Spieler ohne Erfahrung
+
+- synonym: Fortgeschrittene
+  examples: |
+    - Fortgeschrittenenlevel
+    - Erfahrene Spieler
+    - Spieler mit Erfahrung
+    - Geübte
+    - mittleres Niveau
+    - Spieler mit Übung
+    - geübte Spieler
+    - solide Spieler
+    - erfahrene Mannschaft
+    - semi-professionelle Spieler
+    - fortgeschrittene spieler
+
+- synonym: Profis
+  examples: |
+    - Experten
+    - professionelle Spieler
+    - Profispieler
+    - Spieler auf Profiniveau
+    - Expertenlevel
+    - sehr gut
+    - Spitzenspieler
+    - Top-Spieler
+    - Profi-Niveau
+    - erfahrene Profis
+    - Spieler auf höchstem Niveau
+
+- synonym: Fangen
+  examples: |
+    - Fangübungen
+    - Ballfangen
+    - Bälle fangen
+    - Fangtraining
+    - Übungen zum Ballfangen
+    - Übungen für Ballannahme
+    - Fangen
+
+- synonym: Kondition
+  examples: |
+    - Ausdauer
+    - Fitness
+    - Konditionstraining
+    - Lauftraining
+    - Schnelligkeit
+    - Intervalltraining
+    - Zirkeltraining
+    - Laufübungen
+    - Ausdauertraining
+    - Sprinttraining
+
+- synonym: Passen
+  examples: |
+    - Passübungen
+    - Passspiel
+    - Pässe trainieren
+    - Passkombinationen
+    - Passgenauigkeit
+
+
+- synonym: Werfen
+  examples: |
+    - Wurfkraft
+    - Kraft beim Werfen
+    - Starkes Werfen
+    - Wurftechnik
+    - Stärke beim Werfen
+    - Ballwurf
+    - Wurftraining
+    - Würfe üben
+    - Werftraining
+
+
+- synonym: Abwehr
+  examples: |
+    - Abwehrarbeit
+    - Verteidigungsübungen
+    - Defensive
+    - Abwehrtraining
+    - Abwehrtechniken
+    - Blockarbeit
+    - Verteidigungstraining
+    - Defensivarbeit
+
+
+
+

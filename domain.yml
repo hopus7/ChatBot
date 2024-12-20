@@ -1,0 +1,118 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - bot_challenge
+  - ask_exercise
+  - custom_restart
+  - ask_goal
+  - ask_age_group
+  - ask_skill_level
+  - explain_the_bot
+  - thank_you
+
+entities:
+  - goal
+  - age_group
+  - skill_level
+
+slots:
+  goal:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: goal
+  age_group:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: age_group
+  skill_level:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: skill_level
+
+forms:
+  exercise_form:
+    required_slots:
+      - goal
+      - age_group
+      - skill_level
+
+responses:
+  utter_greet:
+    - text: "Hallo! Schön dass du da bist :)"
+    - text: "Hi, schön dich hier zu sehen! :)"
+
+  utter_did_that_help:
+    - text: "Hat dir das weitergeholfen?"
+    - text: "Konnte ich deine Frage zufriedenstellend beantworten?"
+    - text: "Ist das soweit klar für dich?"
+    - text: "Konntest du alle Informationen erhalten, die du brauchst?"
+    - text: "Ist damit alles beantwortet?"
+
+  utter_goodbye:
+    - text: "Danke für dein Vertrauen! Ich hoffe, ich konnte dir helfen. Bis zum nächsten Mal!"
+    - text: "Ich wünsche dir viel Erfolg beim Training. Auf Wiedersehen!"
+    - text: "Mach’s gut und viel Erfolg bei deinen Handballübungen!"
+    - text: "Bis bald! Ich freue mich auf unsere nächste Trainingssession."
+    - text: "Alles Gute und bis zum nächsten Mal!"
+
+  utter_iamabot:
+    - text: "Ich bin ein Bot powered by Rasa."
+    - text: "Ich bin ein virtueller Assistent, der dir bei der Planung von Handballtraining hilft."
+    - text: "Ich bin ein KI-gestützter Bot, spezialisiert auf Handballübungen."
+    - text: "Ich bin dein digitaler Trainingsassistent und hier, um dich zu unterstützen."
+    - text: "Ich bin ein Chatbot und helfe dir gerne bei deiner Trainingsplanung."
+
+  utter_ask_goal:
+    - text: "Welches Ziel möchtest du trainieren?"
+    - text: "An welchem Trainingsaspekt möchtest du arbeiten?"
+    - text: "Was möchtest du trainieren?"
+    - text: "Bei welchem Schwerpunkt kann ich dir helfen?"
+
+  utter_ask_age_group:
+    - text: "Für welche Altersgruppe soll die Übung sein?"
+    - text: "Für welche Altersgruppe suchst du nach Übungen?"
+    #- text: "Auf welches Alterslevel willst du das Training zuschneiden?"
+    #- text: "Für welche Altersstufe soll ich Übungen suchen?"
+    #- text: "An welche Altersklasse denkst du?"
+    #- text: "Welcher Altersgruppe möchtest du Übungen bereitstellen?"
+
+  utter_ask_skill_level:
+    - text: "Für welche Leistungsklasse suchst du die Übung?"
+    - text: "Suchst du Übungen für Anfänger, Fortgeschrittene oder Profis?"
+    - text: "Für welches Fähigkeitsniveau soll ich Übungen vorschlagen?"
+    - text: "Welches Leistungsniveau haben die Spielerinnen und Spieler?"
+
+  utter_restart_info:
+    - text: "Alles klar, wir starten neu. Was möchtest du trainieren?"
+    - text: "Kein Problem, lass uns von vorne beginnen. Was möchtest du trainieren?"
+    - text: "Verstanden, wir fangen neu an. Woran willst du jetzt arbeiten?"
+    - text: "Okay, dann starten wir nochmal. Welches Trainingsziel hast du im Sinn?"
+    - text: "Alles klar, Neustart. Welches Trainingsziel möchtest du anpeilen?"
+
+  utter_explain_the_bot:
+    - text: "Ich kann dir dabei helfen, passende Übungen für bestimmte Voraussetzungen auszuwählen. Frag mich einfach, was du brauchst!"
+    - text: "Ich bin dein persönlicher Chatbot der dir dabei helfen kann, passende Übungen für dein Handball Training zu finden. Sag mir einfach was du brauchst."
+
+  utter_default:
+    - text: "Das habe ich leider nicht verstanden. Ich helfe dir gerne bei der Auswahl von Übungen. Bitte gib eine gültige Eingabe an."
+
+  utter_thank_you:
+    - text: "Kein Problem! Komme gerne wieder auf mich zu:)"
+actions:
+  - action_provide_exercise
+  - action_restart_custom
+  - validate_exercise_form
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+

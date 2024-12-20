@@ -1,0 +1,93 @@
+version: "3.1"
+rules:
+
+- rule: Greet the user
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_explain_the_bot
+
+- rule: Say goodbye to the user
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Respond to bot challenge
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+# Wenn der User um Übungen bittet (allgemein), starte das exercise_form
+- rule: Activate exercise form for general request
+  steps:
+  - intent: ask_exercise
+  - action: exercise_form
+  - active_loop: exercise_form
+
+# Wenn der User direkt ein Ziel (goal) angibt
+- rule: Set goal and ask for missing slots
+  steps:
+  - intent: ask_goal
+  - action: exercise_form
+  - active_loop: exercise_form
+
+# Regel zur Aktivierung des Formulars bei der Angabe einer Altersgruppe (ask_age_group)
+- rule: Activate exercise form when age group is mentioned
+  steps:
+  - intent: ask_age_group
+  - action: exercise_form
+  - active_loop: exercise_form
+
+# Regel zur Aktivierung des Formulars bei der Angabe eines Fähigkeitsniveaus (ask_skill_level)
+- rule: Activate exercise form when skill level is mentioned
+  steps:
+  - intent: ask_skill_level
+  - action: exercise_form
+  - active_loop: exercise_form
+
+# Wenn der User direkt die Altersgruppe (age_group) nennt
+- rule: Set age_group and ask for missing slots
+  condition:
+  - active_loop: exercise_form
+  steps:
+  - intent: ask_age_group
+  - action: exercise_form
+
+# Wenn der User direkt das Fähigkeitsniveau (skill_level) nennt
+- rule: Set skill_level and ask for missing slots
+  condition:
+  - active_loop: exercise_form
+  steps:
+  - intent: ask_skill_level
+  - action: exercise_form
+
+# Wenn alle Slots abgefragt wurden, Formular beenden und Übung präsentieren
+- rule: Submit exercise form
+  condition:
+  - active_loop: exercise_form
+  steps:
+  - action: exercise_form
+  - active_loop: null
+  - action: action_provide_exercise
+
+- rule: Restart the conversation
+  steps:
+  - intent: custom_restart
+  - action: action_restart_custom
+  - action: exercise_form
+  - active_loop: exercise_form
+
+- rule: Explain the Bot
+  steps:
+  - intent: explain_the_bot
+  - action: utter_explain_the_bot
+
+- rule: Handle Fallback
+  steps:
+    - intent: nlu_fallback
+    - action: utter_default
+
+- rule: say thank you
+  steps:
+    - intent: thank_you
+    - action: utter_thank_you

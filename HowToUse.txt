@@ -1,0 +1,21 @@
+Hallo Frau Kuß,
+
+Hier finden Sie die Erklärung wie Sie den Bot nutzen können.
+
+In der requirements.txt Datei finden Sie alle benötigten packages. (Ich hoffe dort sind alle enthalten,
+ich habe noch nie so eine Datei erstellen müssen)
+
+Die Datei App.py ist für das Frontend via der streamlit anbindung.
+
+Um streamlit zu nutzen, werden mehrere Terminal Befehle benötigt.
+
+1. Terminal: rasa run actions       # Der actions server muss wie gewohnt laufen
+2. Terminal: rasa run --enable-api  # Dies wird benötigt dass der Bot in der streamlit anwendung läuft
+3. Terminal: streamlit run App.py   # Damit wird App.py gestartet und das streamlit Fenster öffnet sich
+
+Eventuell ist 2. rasa run --enable-api auch nicht notwendig.
+
+Ansonsten wird mit rasa train der Bot ganz normal trainiert und durch rasa shell kann der Bot ohne
+streamlit wie gewohnt genutzt werden.
+
+Des Weiteren muss der Pfad zur Excel Datei in Zeile 21-22 der actions.py Datei angepasst werden.
